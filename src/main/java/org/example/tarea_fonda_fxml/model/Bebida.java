@@ -1,4 +1,4 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml.model;
 // Clase
 public abstract class Bebida {
     //Atributo de Identificacion
@@ -8,9 +8,9 @@ public abstract class Bebida {
     protected int stock;
 //Constructor
     public Bebida(String nombre, int volumenMl, int stock) {
-        this.nombre = nombre;
-        this.volumenMl = volumenMl;
-        this.stock = stock;
+        this.setNombre(nombre);
+        this.setVolumenMl(volumenMl);
+        this.setStock(stock);
     }
 
 
@@ -51,10 +51,17 @@ public abstract class Bebida {
 
     public abstract double calcularPrecio();
 
-    public abstract String obtenerDetalle();
+
 
 
     public String toString() {
         return "Nombre: " + nombre + " | Volumen: " + volumenMl + " ml";
     }
+
+    /** Formato de pesos chilenos: $10.800. */
+    public static String pesos(int monto) {
+        return String.format("$%,d", monto).replace(',', '.');
+    }
+    /** "Interior" o "Exterior": se muestra en la tabla sin preguntar por la clase concreta. */
+    public abstract String getTipo();
 }

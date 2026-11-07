@@ -1,4 +1,8 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml.controller;
+
+import org.example.tarea_fonda_fxml.model.Bebida;
+import org.example.tarea_fonda_fxml.model.BebidaAlcoholica;
+import org.example.tarea_fonda_fxml.model.ConsumoResponsable;
 
 import java.util.ArrayList;
 import java.util.List;

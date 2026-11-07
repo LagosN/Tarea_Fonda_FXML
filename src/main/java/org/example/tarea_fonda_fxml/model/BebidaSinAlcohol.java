@@ -1,11 +1,11 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml.model;
 
 public class BebidaSinAlcohol extends Bebida {
     private int azucarPorLitro;
 
     public BebidaSinAlcohol(String nombre, int volumenMl, int stock, int azucarPorLitro) {
         super(nombre, volumenMl, stock);
-        this.azucarPorLitro = azucarPorLitro;
+        this.setAzucarPorLitro(azucarPorLitro);
     }
 
     public int getAzucarPorLitro() {
@@ -30,12 +30,17 @@ public class BebidaSinAlcohol extends Bebida {
     }
 
     @Override
-    public String obtenerDetalle() {
+    public String toString() {
         return "Tipo: Bebida Sin Alcohol | Nombre: " + getNombre()
                 + " | Volumen: " + getVolumenMl() + " ml"
                 + " | Stock: " + getStock()
                 + " | Azúcar: " + getAzucarPorLitro() + " g/L"
                 + " | Precio: $" + (int) calcularPrecio();
+    }
+
+    @Override
+    public String getTipo() {
+        return "Sin Alcohol";
     }
 
 }

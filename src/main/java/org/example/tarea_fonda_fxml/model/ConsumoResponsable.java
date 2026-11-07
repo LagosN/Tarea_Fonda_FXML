@@ -1,4 +1,4 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml.model;
 
 public interface ConsumoResponsable
 { public boolean tieneVentaRestringida();

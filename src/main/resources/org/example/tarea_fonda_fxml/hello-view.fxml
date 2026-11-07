@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.tarea_fonda_fxml.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tarea_fonda_fxml.controller.MainController">
+   <children>
+      <VBox layoutX="8.0" layoutY="32.0" prefHeight="190.0" prefWidth="181.0">
+         <children>
+            <Label text="Tipo de Bebida" />
+            <ChoiceBox fx:id="tipoBebidaChoiceBox" onAction="#OnSeleccionarTipo" prefWidth="150.0" />
+            <Label text="Nombre" />
+            <TextField fx:id="nombreTextField" prefHeight="25.0" prefWidth="28.0" />
+            <Label layoutX="10.0" layoutY="10.0" text="Volumen" />
+            <TextField fx:id="volumenTextField" layoutX="10.0" layoutY="27.0" prefHeight="25.0" prefWidth="28.0" />
+            <Label layoutX="10.0" layoutY="52.0" text="Stock" />
+            <TextField fx:id="stockTextField" layoutX="10.0" layoutY="69.0" prefHeight="25.0" prefWidth="28.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="8.0" layoutY="232.0" prefHeight="73.0" prefWidth="181.0">
+         <children>
+            <Label text="Grados de Alcohol" />
+            <TextField fx:id="gradosAlcoholTextField" prefHeight="25.0" prefWidth="28.0" />
+            <CheckBox fx:id="isCertificadaCheckBox" mnemonicParsing="false" text="Certificada" />
+         </children>
+      </VBox>
+      <VBox layoutX="8.0" layoutY="334.0" prefHeight="52.0" prefWidth="181.0">
+         <children>
+            <Label text="Azucar por litro" />
+            <TextField fx:id="azucarTextField" />
+         </children>
+      </VBox>
+      <TableView fx:id="bebidasTableView" layoutX="223.0" layoutY="32.0" prefHeight="341.0" prefWidth="376.0">
+        <columns>
+          <TableColumn fx:id="tipoTableColumn" prefWidth="75.0" text="Tipo" />
+          <TableColumn fx:id="nombreTableColumn" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="volumenTableColumn" prefWidth="75.0" text="Volumen" />
+            <TableColumn fx:id="stockTableColumn" prefWidth="75.0" text="Stock" />
+            <TableColumn fx:id="precioTableColumn" prefWidth="75.0" text="Precio" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#registrarButton" text="Registrar" />
+      <Button layoutX="137.0" layoutY="410.0" mnemonicParsing="false" onAction="#limpiarButton" text="Limpiar" />
+      <Button layoutX="547.0" layoutY="410.0" mnemonicParsing="false" onAction="#eliminarButton" text="Eliminar" />
+      <Label fx:id="mensajeUsuario" layoutX="223.0" layoutY="14.0" text="Alertas" />
+   </children>
+</AnchorPane>

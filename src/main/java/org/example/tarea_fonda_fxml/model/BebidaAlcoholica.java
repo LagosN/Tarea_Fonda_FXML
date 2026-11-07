@@ -1,4 +1,4 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml.model;
 
 public class BebidaAlcoholica extends Bebida implements ConsumoResponsable {
     public static final int LIMITE_UNIDADES_POR_CLIENTE = 3;
@@ -21,9 +21,9 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable {
                             double gradosAlcohol, boolean certificada,
                             boolean ventaRestringida) {
         super(nombre, volumenMl, stock);
-        this.gradosAlcohol = gradosAlcohol;
-        this.certificada = certificada;
-        this.ventaRestringida = ventaRestringida;
+        this.setGradosAlcohol(gradosAlcohol);
+        this.setCertificada(certificada);
+        this.setVentaRestringida(ventaRestringida);
     }
 
     public double getGradosAlcohol() {
@@ -58,9 +58,7 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable {
         return ventaRestringida;
     }
     
-    @Override
-    public String toString(){
-        return  super.toString() ;}
+
 
     @Override
     public void restringirVenta() {
@@ -69,15 +67,11 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable {
 
     @Override
     public double calcularPrecio() {
-        if (this.certificada){return  3500;}
-            else{return 3500 *0.2;}
-
-
-       // return certificada ? 3500 : 4200;
+        return certificada ? 3500 : 4200;
     }
 
     @Override
-    public String obtenerDetalle() {
+    public String toString() {
         String mensaje;
         mensaje = "Tipo: Bebida Alcoholica | Nombre: " + getNombre()
                 + " | Volumen: " + getVolumenMl() + " ml"
@@ -93,5 +87,11 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable {
     public boolean superaLimite(int unidades) {
         return unidades > LIMITE_UNIDADES_POR_CLIENTE;
     }
+
+    @Override
+    public String getTipo() {
+        return "Alcoholica";
+    }
+
 
 }

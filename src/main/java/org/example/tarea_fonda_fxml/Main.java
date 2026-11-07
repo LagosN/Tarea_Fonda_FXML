@@ -1,4 +1,10 @@
-package cl.dsy1102.fonda;
+package org.example.tarea_fonda_fxml;
+
+import org.example.tarea_fonda_fxml.controller.GestorFonda;
+import org.example.tarea_fonda_fxml.model.Bebida;
+import org.example.tarea_fonda_fxml.model.BebidaAlcoholica;
+import org.example.tarea_fonda_fxml.model.BebidaSinAlcohol;
+import org.example.tarea_fonda_fxml.model.ConsumoResponsable;
 
 /**
  * Punto de entrada de la Tarea Fiestas Patrias - Fonda San Belarmino.
@@ -26,7 +32,7 @@ public class Main {
 
         System.out.println("BUSQUEDA POR NOMBRE: Chicha");
         for (Bebida bebida : gestor.buscarPorNombre("Chicha")) {
-            System.out.println(bebida.obtenerDetalle());
+            System.out.println(bebida.toString());
         }
         // TODO 4: solicitar las cuatro ventas indicadas en el enunciado.
         System.out.println("VENTA");
