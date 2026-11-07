@@ -26,11 +26,11 @@ public class App extends Application {
         if (vista == null) {
             throw new IllegalStateException("No se encontró la vista principal: " + VISTA_PRINCIPAL);
         }
-        
+
 
 
         Parent root = FXMLLoader.load(vista);
-        stage.setTitle("Vivero Hojas del Sur");
+        stage.setTitle("Fonda 18 superStar");
         stage.setScene(new Scene(root));
         stage.show();
 
